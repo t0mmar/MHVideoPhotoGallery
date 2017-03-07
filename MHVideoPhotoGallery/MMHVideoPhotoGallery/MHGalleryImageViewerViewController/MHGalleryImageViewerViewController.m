@@ -1076,6 +1076,16 @@
     
 }
 
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    if (self.moviePlayer) {
+        [self removeAllMoviePlayerViewsAndNotifications];
+    }
+}
+
 -(void)autoPlayVideo{
     if (self.viewController.galleryViewController.autoplayVideos){
         [self playButtonPressed];
